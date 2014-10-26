@@ -14,14 +14,14 @@ max_profit = 0
       		p profit
       	if profit > max_profit
       	  max_profit = profit
-
-      	  
+      	  time_to_buy = i
+      	  time_to_sell = j
       	end
       	j += 1
       end
       i += 1
    end
-    max_profit
+     return [time_to_buy, time_to_sell]
 end
 
-     p stox_picker([0,10,6,99,12,1])
+     p stox_picker([10,6,99,12,1])
