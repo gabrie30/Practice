@@ -7,11 +7,10 @@ i = 0
 max_profit = 0
 
   while i < price_per_day.length-1
-
     j = i + 1
+    
       while j < price_per_day.length
       	profit = (price_per_day[j]).to_i - (price_per_day[i]).to_i
-      		p profit
       	if profit > max_profit
       	  max_profit = profit
       	  time_to_buy = i
