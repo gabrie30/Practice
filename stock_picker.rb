@@ -4,14 +4,14 @@
 def stox_picker(price_per_day)
 
 i = 0
-max_profit = 0
+max_profit = 0 # keep this outside the while loop because we don't want it resetting to 0
 
-  while i < price_per_day.length-1
+  while i < price_per_day.length-1 #sets the slow moving while loop
     j = i + 1
-    
-      while j < price_per_day.length
-      	profit = (price_per_day[j]).to_i - (price_per_day[i]).to_i
-      	if profit > max_profit
+
+      while j < price_per_day.length #sets the fast moving while loop
+      	profit = (price_per_day[j]).to_i - (price_per_day[i]).to_i # selling - buying
+      	if profit > max_profit #find the largest profit and reassigns max_profit
       	  max_profit = profit
       	  time_to_buy = i
       	  time_to_sell = j
