@@ -59,3 +59,4 @@ def ordered_vowel_word?(word) #counts the number of vowels in each word
 end
 
 p ordered_vowel_words("Lets check to see which words in this string have vowels that are in alphabetical order. Like aeiou adiou aeiuo")
+ 
