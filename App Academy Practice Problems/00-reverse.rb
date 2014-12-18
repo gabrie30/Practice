@@ -83,6 +83,19 @@
 # p reverse("abc", method(:backwards))
 ##
 
+## Solving iteratively using a negative index ##
+# def reverse(string)
+#   answer = ""
+#   i = -1
+#   while i >= string.length - (string.length * 2)
+#     answer << string[i]
+#     i -= 1
+#   end
+#   answer
+# end
+# p reverse("abcdefg")
+##
+
 
 
 # puts(
