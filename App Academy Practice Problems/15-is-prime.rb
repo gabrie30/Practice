@@ -13,20 +13,21 @@
 # Difficulty: medium.
 
 def is_prime?(number)
-  if number <= 1
+  test = [*2..(number-1)]
+  
+  if number == 2
     return true
   end
 
-  arr = [*2..(number-1)]
-  i = 0
-
-  while i < arr.length
-    if number % arr[i] == 0
+  test.each do |n|
+    if number % n == 0
       return false
     end
-    i += 1
   end
-true
+  true
 end
 
-p is_prime?(2)
+puts('is_prime?(2) == true: ' + (is_prime?(2) == true).to_s)
+puts('is_prime?(3) == true: ' + (is_prime?(3) == true).to_s)
+puts('is_prime?(4) == false: ' + (is_prime?(4) == false).to_s)
+puts('is_prime?(9) == false: ' + (is_prime?(9) == false).to_s)
