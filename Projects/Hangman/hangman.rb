@@ -26,7 +26,7 @@ class HangmanGame
   end
 
   def display_game
-    puts @@art[@guesses] #if not a class variable undefined method `[]' for nil:NilClass (NoMethodError)
+    puts @art[@guesses] #if not a class variable undefined method `[]' for nil:NilClass (NoMethodError)
     puts " "
     print "Available Guesses: -" #added dash just to make things appear symetrical
     @letters_to_guess_from.each { |letter| print letter + "-"}
@@ -94,6 +94,7 @@ puts " "
 game = HangmanGame.new(0, puzzle) 
 
 game.covered_word
+game.images
 
 game_over = false
 won = false
