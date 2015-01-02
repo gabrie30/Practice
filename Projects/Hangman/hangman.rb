@@ -9,6 +9,7 @@ class HangmanGame
     @bad_guesses = []
     @correct_guesses = 0
     @show = ""
+    covered_word
     images
   end
 
@@ -93,8 +94,6 @@ puts " "
 
 
 game = HangmanGame.new(0, puzzle) 
-
-game.covered_word
 
 
 game_over = false
