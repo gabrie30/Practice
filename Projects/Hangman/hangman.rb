@@ -9,6 +9,7 @@ class HangmanGame
     @bad_guesses = []
     @correct_guesses = 0
     @show = ""
+    images
   end
 
   def check_guess(user_input)
@@ -94,7 +95,7 @@ puts " "
 game = HangmanGame.new(0, puzzle) 
 
 game.covered_word
-game.images
+
 
 game_over = false
 won = false
