@@ -1,4 +1,4 @@
-#For this challenge you will be counting all the vowels in a string.
+# For this challenge you will be counting all the vowels in a string.
 
 def VowelCount(str)
   vowels = %w(a e i o u)
