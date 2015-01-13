@@ -1,9 +1,10 @@
+require 'rubygems'
 require 'gosu'
-require_relative 'world.rb'
+require_relative 'world'
 
 class GameOfLifeWindow < Gosu::Window
 
-  def initialize(height=1800, width=900)
+  def initialize(height=1500, width=1000)
 
     # Basics
     @height = height
