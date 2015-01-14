@@ -1,21 +1,23 @@
+# I am not taking credit for this code the tutorial can be found at https://www.youtube.com/watch?v=iLXO2FLPulI
+
 require 'rubygems'
 require 'gosu'
 require_relative 'world'
 
 class GameOfLifeWindow < Gosu::Window
 
-  def initialize(height=1500, width=1000)
+  def initialize(height=700, width=500)
 
     # Basics
     @height = height
     @width = width
     super height, width, false
-    self.caption = "Sven's Game of Life"
+    self.caption = "Game of Life"
 
     # Colors
     @background = Gosu::Color.new(0xffdedede)
-    @alive = Gosu::Color.new(0xff121212)
-    @dead = Gosu::Color.new(0xffededed)
+    @alive = Gosu::Color.new(0xff000000)
+    @dead = Gosu::Color.new(0x00000000)
 
     # Game world
     @rows = height/10

@@ -1,3 +1,5 @@
+# I am not taking credit for this code the tutorial can be found at https://www.youtube.com/watch?v=iLXO2FLPulI
+
 class Game
   attr_accessor :world
 
@@ -132,7 +134,7 @@ class World
 
   def randomly_populate
     cells.each do |cell|
-      cell.alive = [true, false].sample
+      cell.alive = [true, false, false, false, false, false].sample
     end
   end
 
