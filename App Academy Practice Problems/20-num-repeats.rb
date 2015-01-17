@@ -7,7 +7,8 @@
 # Difficulty: hard.
 
 def num_repeats(string)
-  string = string.gsub(" ", "") # gets rid of spaces
+  string = string.gsub(" ", "") 
+  # Get rid of spaces. Also if this contained numbers, symbols, etc would need to delete those too or they will be counted
   letters = string.split("")
   holder = []
 

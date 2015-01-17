@@ -11,4 +11,4 @@ def old_roman_numeral num
   roman
 end
 
-p old_roman_numeral(2006)
+p old_roman_numeral(500)
