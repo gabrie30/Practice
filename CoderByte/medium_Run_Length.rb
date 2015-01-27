@@ -1,26 +1,34 @@
-def RunLength(str)
-  str = str.split("")
-  holder = []
-  answer = ""
-  
+def check_word(target,word)
+  word = word.split("")
+  count = 0
   i = 0
-  while i < str.length
-    current = str[i]
-    j = i
-    count = 0
-      while current == str[j]
-        count += 1
-        holder << str[j]
-        j += 1
-      end
-    
-    how_many = holder.length
-    i += count
-    answer << how_many.to_s
-    answer << holder[0]
-    holder = []
+  while i < word.length
+    if target.include?(word[i])
+      count += 1
+    end
+    i += 1
   end
- answer     
+
+  if count == target.length-1
+    return true
+  end
+  false
+end  
+
+def one_off_words(str, word_list)
+  target = str.split("")
+  answer = []
+
+  i = 0
+  while i < word_list.length
+    if check_word(target, word_list[i])
+      answer << word_list[i]
+    end
+    i += 1
+  end
+answer
 end
 
-p RunLength("yesssssnomaybe")
+p one_off_words("hello", ["hellw", "ollea", "hola"])
+WORDS = ["door", "moot", "boot", "boots"]
+p one_off_words("moor", WORDS)
