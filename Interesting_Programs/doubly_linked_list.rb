@@ -20,7 +20,7 @@ class LinkedList
     node_to_return
   end
 
-  def prepend(value) 
+  def prepend(value)
     if !@head
       @tail = @head = Node.new(value, nil, nil)
     else
@@ -32,7 +32,7 @@ class LinkedList
     self
   end
 
-  def append(value) 
+  def append(value)
     if !@head
       @head = @tail = Node.new(value, nil, nil)
     else
@@ -74,7 +74,7 @@ class LinkedList
 
 
 
-  def insert(value, insert_after) 
+  def insert(value, insert_after)
     node_to_insert = Node.new(value, nil, nil)
 
     if insert_after == @tail.value # if user tries to insert after the tail, it is just appending
@@ -82,10 +82,10 @@ class LinkedList
     elsif insert_after == @head.value # if inserting after the head
       cursor = @head
       one_past = cursor.next_node
-      node_to_insert.next_node = cursor.next_node 
+      node_to_insert.next_node = cursor.next_node
       node_to_insert.previous_node = cursor
       one_past.previous_node = node_to_insert # cursor == cursor.next_node, so this is really cursor.next_node.next_node
-      cursor.next_node = node_to_insert 
+      cursor.next_node = node_to_insert
     else
       cursor = @head
       while cursor.value != insert_after # this will find the node we will insert our new node after
@@ -95,7 +95,7 @@ class LinkedList
       node_to_insert.next_node = cursor.next_node # First we assign both of the pointers for the new node
       insert_after == @head ? (node_to_insert.previous_node = @head) : (node_to_insert.previous_node = cursor)
       one_past.previous_node = node_to_insert # cursor == cursor.next_node, so this is really cursor.next_node.next_node
-      cursor.next_node = node_to_insert 
+      cursor.next_node = node_to_insert
     end
   end
 end
@@ -111,8 +111,33 @@ my_list.prepend("Cowboy")
 my_list.delete("ZOO")
 my_list.shift
 my_list.append("Zeus")
+my_list.append("Zeus")
 my_list.shift
+my_list.append("Jak")
 
+my_list.to_s
+
+
+uniques = []
+cursor = my_list.head
+
+# Removes any duplicates in the list
+dupes = 0
+while cursor != nil
+  if uniques.include?(cursor.value) && cursor.value == my_list.tail.value
+    new_tail = cursor.previous_node
+    new_tail.next_node = nil
+    my_list.tail = new_tail
+  elsif uniques.include?(cursor.value)
+    current_node = cursor
+    before_node = cursor.previous_node
+    after_node = cursor.next_node
+    before_node.next_node = current_node.next_node
+    after_node.previous_node = before_node
+  end
+  uniques << cursor.value
+  cursor = cursor.next_node
+end
 
 my_list.to_s
 
@@ -120,8 +145,3 @@ my_list.to_s
 # p my_list.tail.previous_node.value
 # p "The head: #{my_list.head.value}"
 # p "The tail: #{my_list.tail.value}"
-
-
-
-
-
