@@ -19,6 +19,14 @@ class List
     @list
   end
 
+  def unjoin(unjoining)
+    @list.each.with_index do |element, index|
+      if index == unjoining
+        @list[index] = index
+      end
+    end
+  end
+
   def union?(testing, test)
     @list[testing] == @list[test] ? true : false
   end
@@ -44,6 +52,9 @@ my_list.join(0, 2)
 my_list.join(0, 5)
 my_list.join(1, 3)
 my_list.join(1, 4)
+
+my_list.unjoin(2)
+my_list.unjoin(4)
 
 p my_list.union?(0, 2)
 p my_list.union?(0, 5)
